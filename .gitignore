@@ -1,0 +1,12 @@
+**/bin/
+**/obj/
+/.vs/
+/lib/*
+!/lib/.gitkeep
+*.user
+*.swp
+*.suo
+*.userprefs
+*.csproj.user
+*.cache
+*.ide
