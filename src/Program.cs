@@ -95,18 +95,23 @@ internal static class Program
 
     /// <summary>
     /// Simple blocking REPL that lets operators send quick commands to the controller.
-    /// CTRL+C or the "exit" command will route through this loop to ensure a clean shutdown.
+    /// CTRL+C now triggers an immediate shutdown even while a ReadLine is pending.
     /// </summary>
     private static void RunInteractiveLoop(StimulationController controller)
     {
         var running = true;
-        Console.CancelKeyPress += (_, e) =>
+
+        void OnCancel(object? sender, ConsoleCancelEventArgs e)
         {
             e.Cancel = true;
-            running = false;
             Console.WriteLine();
             Console.WriteLine("Cancellation requested. Shutting down...");
-        };
+            controller.StopStimulation();
+            controller.Shutdown();
+            Environment.Exit(0);
+        }
+
+        Console.CancelKeyPress += OnCancel;
 
         while (running)
         {
@@ -129,6 +134,7 @@ internal static class Program
             }
         }
 
+        Console.CancelKeyPress -= OnCancel;
         controller.StopStimulation();
         controller.Shutdown();
     }

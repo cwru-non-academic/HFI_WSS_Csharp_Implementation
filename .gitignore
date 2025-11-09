@@ -1,8 +1,6 @@
 **/bin/
 **/obj/
 /.vs/
-/lib/*
-!/lib/.gitkeep
 *.user
 *.swp
 *.suo

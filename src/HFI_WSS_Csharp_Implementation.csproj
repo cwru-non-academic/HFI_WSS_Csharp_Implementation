@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="System.Security.Permissions" Version="7.0.0" />
+    <PackageReference Include="System.IO.Ports" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
