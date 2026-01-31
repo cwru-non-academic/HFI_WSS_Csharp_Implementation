@@ -3,6 +3,9 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Wss.CoreModule;
+using Wss.ModelModule;
+using Wss.CalibrationModule;
 
 namespace HFI.Wss;
 
