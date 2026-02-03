@@ -2,6 +2,8 @@
 
 Bootstrap of the HFI WSS C# console application.
 
+All documentation about the API and other implementations can be found in [GitHub Pages](https://cwru-non-academic.github.io/WSS_Documentation/).
+
 ## Layout
 
 - `src/` – contains the console application (`HFI_WSS_Csharp_Implementation.csproj`).
